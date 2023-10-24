@@ -47,11 +47,36 @@ function findByArtist(collection, artist){
     }
   }
   return array;
-}
+
+  }
+
 
 findByArtist(myCollection, 'Bad Bunny');
 
 findByArtist(myCollection, 'Rosalía');
+
+
+// function search(collection, searchCriteria){
+//  for(let album of collection){
+//   let newArray = [];
+//   let searchCriteria = {
+//     artist: album.artist,
+//     year: album.year
+//   }
+//   if (searchCriteria.artist === artist && searchCriteria.year === year){
+//     newArray.push(album);
+//   }
+//   return array;
+//  }
+//   else {
+//     return collection;
+//   }
+// }
+
+// search(myCollection, {artist, year})
+
+// Did my best to attempt the stretch goal, I *believe* I got stuck on how to use an object as a search argument buuut I could also be wrong!
+// My brain hurts and I'm gonna leave it at that for today!
 
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
