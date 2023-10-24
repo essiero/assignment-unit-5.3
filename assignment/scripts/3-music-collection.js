@@ -23,41 +23,6 @@ console.log(addToCollection(myCollection, 'YHLQMDLG', 'Bad Bunny', 2020));
 console.log(addToCollection(myCollection, 'We Love Dogs!', 'Remi Wolf', 2021));
 console.log('My music collection:', myCollection);
 
-// function showCollection(collection) {
-//   for(let i = 0; i < collection.length; i++){
-//     console.log(collection[i]);
-//   }
-//   return collection[i];
-// }
-
-// console.log('My music collection: ', showCollection(myCollection));
-
-
-
-// - Create a function named `addToCollection`. It should have this basic structure:
-//   - ```js
-//       function addToCollection(collection, title, artist, yearPublished) {
-//         // your code here...
-//       }
-//     ```
-//   - This function should:
-//     - Take in a `collection` parameter, so that this function can be used to add to *either collection*
-//     - Take in the album's `title`, `artist`, `yearPublished` as input parameters
-//     - Create a new object having the above properties
-//       - *NOTE*: Your object's properties **must** have `title`, `artist`, and `yearPublished` in order for this assignment's automated tests to work correctly!
-//     - Add the new object to the end of the `collection` array
-//     - `return` the newly created object
-
-// - Use and Test the `addToCollection` function:
-//   - Add 6 albums to **your** collection. Aim to have a mix of both same and different artists and published years. 
-//   (Feel free to share your musical interests, or make stuff up. Totally fine either way.)
-//   - `console.log`` each album as added using the function's returned value.
-//   - After all are added, console.log the `collection` array.
-
-// - Create a function named `showCollection`. This function should:
-//   - Take in a `collection` parameter. (This allows it to be reused to show any array of album objects!)
-//   - Loop over the `collection` and `console.log` each album's information formatted **within a single string**, 
-//   like: `TITLE by ARTIST, published in YEAR`.
 
 function showCollection(collection){
   for ( let album of collection){
@@ -66,22 +31,27 @@ function showCollection(collection){
   return collection;
 }
 
-showCollection(myCollection);
 // shoutout to Walker's question in Slack, I had the same issue and that solved it!
 
-// - Test the `showCollection` function.
+showCollection(myCollection);
 
-// - Add a function named `findByArtist`. This function should:
-//   - Take in a `collection` parameter. Remember, we want to be able to search any collection!
-//   - Take in an `artist` (string) parameter
-//   - Create an empty array to hold any matching results, if any
-//   - Loop through the `collection` and add any album objects with a matching artist to the array.
-//   - Return the array with the matching results. (If no results are found, an empty array should be returned.)
 
-// - Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, 
-// as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are returned.
+function findByArtist(collection, artist){
+  console.log('Collection is: ', collection);
+  console.log('Artist: ', artist);
+  let array = [];
+  for (record of collection){
+    if(record.artist === artist){
+      array.push(record);
+      console.log(record);
+    }
+  }
+  return array;
+}
 
-// > When testing your functions, write all tests in the JavaScript file!
+findByArtist(myCollection, 'Bad Bunny');
+
+findByArtist(myCollection, 'Rosalía');
 
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
